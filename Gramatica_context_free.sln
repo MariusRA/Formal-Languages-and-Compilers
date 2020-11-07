@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gramatica_context_free", "Gramatica_context_free\Gramatica_context_free.vcxproj", "{018ED883-BC21-4BD7-A21C-F90D7B7FDD3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{018ED883-BC21-4BD7-A21C-F90D7B7FDD3F}.Debug|x64.ActiveCfg = Debug|x64
+		{018ED883-BC21-4BD7-A21C-F90D7B7FDD3F}.Debug|x64.Build.0 = Debug|x64
+		{018ED883-BC21-4BD7-A21C-F90D7B7FDD3F}.Debug|x86.ActiveCfg = Debug|Win32
+		{018ED883-BC21-4BD7-A21C-F90D7B7FDD3F}.Debug|x86.Build.0 = Debug|Win32
+		{018ED883-BC21-4BD7-A21C-F90D7B7FDD3F}.Release|x64.ActiveCfg = Release|x64
+		{018ED883-BC21-4BD7-A21C-F90D7B7FDD3F}.Release|x64.Build.0 = Release|x64
+		{018ED883-BC21-4BD7-A21C-F90D7B7FDD3F}.Release|x86.ActiveCfg = Release|Win32
+		{018ED883-BC21-4BD7-A21C-F90D7B7FDD3F}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F69C88BC-300A-4EDD-9CF3-766313AB88E0}
+	EndGlobalSection
+EndGlobal

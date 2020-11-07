@@ -1,0 +1,6 @@
+﻿  Source.cpp
+C:\Users\mariu\Desktop\faculta\Teme golomety\tema1\Gramatica_context_free\Gramatica_context_free\grammar.h(70,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mariu\Desktop\faculta\Teme golomety\tema1\Gramatica_context_free\Gramatica_context_free\grammar.h(137,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mariu\Desktop\faculta\Teme golomety\tema1\Gramatica_context_free\Gramatica_context_free\grammar.h(150,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\mariu\Desktop\faculta\Teme golomety\tema1\Gramatica_context_free\Gramatica_context_free\Source.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Gramatica_context_free.vcxproj -> C:\Users\mariu\Desktop\faculta\Teme golomety\tema1\Gramatica_context_free\Debug\Gramatica_context_free.exe
