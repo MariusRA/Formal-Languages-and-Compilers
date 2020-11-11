@@ -1,3 +1,3 @@
 ﻿  Source.cpp
-D:\faculta\Teme_golomety\ProjectFLC\Gramatica_context_free\Source.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\faculta\Teme_golomety\ProjectFLC\Gramatica_context_free\push_down_automate.h(147,47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Gramatica_context_free.vcxproj -> D:\faculta\Teme_golomety\ProjectFLC\x64\Debug\Gramatica_context_free.exe

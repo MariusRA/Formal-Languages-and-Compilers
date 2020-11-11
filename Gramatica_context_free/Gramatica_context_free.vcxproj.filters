@@ -23,6 +23,9 @@
     <Text Include="gramatica.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="productions_tables_apd.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="push_down_automate.h">

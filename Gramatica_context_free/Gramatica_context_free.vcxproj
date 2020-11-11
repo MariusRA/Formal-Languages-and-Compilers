@@ -142,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="gramatica.txt" />
+    <Text Include="productions_tables_apd.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="grammar.h" />
