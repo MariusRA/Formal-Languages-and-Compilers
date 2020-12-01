@@ -141,11 +141,15 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="apdcg.txt" />
+    <Text Include="apdcg_output.txt" />
     <Text Include="gramatica.txt" />
     <Text Include="productions_tables_apd.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="code_generator.h" />
     <ClInclude Include="grammar.h" />
+    <ClInclude Include="includes.h" />
     <ClInclude Include="push_down_automate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

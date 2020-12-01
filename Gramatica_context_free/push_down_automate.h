@@ -1,13 +1,6 @@
-#pragma once
+#include "includes.h"
+
 #define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <ctime>
-#include <time.h>
-#include <iomanip>
-#include <stack>
 
 const static int _pMatrixLines = 10;
 const static int _pMatrixColumns = 10;
@@ -15,7 +8,7 @@ const static int _pMatrixColumns = 10;
 struct APD
 {
 	string pMatrix[_pMatrixLines][_pMatrixColumns];
-	string initialString = "a*(a+a)$";
+	string initialString = "(a+a)*a$";
 	string delimitersP = ",->";
 	string delimitersT = ",";
 	vector<pair<string, string>> productions;
@@ -114,9 +107,7 @@ string APD::getElement(string line, string column) {
 
 void APD::pushDownAutomate() {
 
-	int _length = -1;
-	int _index = -1;
-	stack<string> principalStack, principalStackCopy, principalStackCopy2;
+	stack<string> principalStack, principalStackCopy;
 	string initialStringCopy;
 	string element;
 
@@ -125,6 +116,8 @@ void APD::pushDownAutomate() {
 
 	while (initialStringCopy.length() > 0) {
 
+		int _length = -1;
+		int _index = -1;
 		string auxString;
 		auxString = auxString + initialStringCopy[0];
 		element = getElement(principalStack.top(), auxString);
@@ -138,7 +131,6 @@ void APD::pushDownAutomate() {
 			principalStackCopy = principalStack;
 			string inStack;
 			while (!principalStackCopy.empty()) {
-				principalStackCopy2 = principalStackCopy;
 				inStack.append(principalStackCopy.top());
 				principalStackCopy.pop();
 				reverse(inStack.begin(), inStack.end());
