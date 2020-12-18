@@ -2,13 +2,13 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-const static int _pMatrixLines = 10;
-const static int _pMatrixColumns = 10;
+const static int _pMatrixLines = 11;
+const static int _pMatrixColumns = 11;
 
 struct APD
 {
 	string pMatrix[_pMatrixLines][_pMatrixColumns];
-	string initialString = "(a+a)*a$";
+	string initialString = "a/a$";
 	string delimitersP = ",->";
 	string delimitersT = ",";
 	vector<pair<string, string>> productions;

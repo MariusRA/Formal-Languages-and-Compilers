@@ -2,14 +2,14 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-const static int pMatrixLines = 10;
-const static int pMatrixColumns = 10;
+const static int linii = 10;
+const static int coloane = 10;
 static ofstream f;
 
 struct APDCG
 {
-	string pMatrix[pMatrixLines][pMatrixColumns];
-	string initialString = "(a+a)*(a+a)+(a*a)+a+a*(a+a)*a+a+a$";
+	string pMatrix[linii][coloane];
+	string initialString = "(a+a)*(a+a)$";
 	string delimitersP = ",->";
 	string delimitersT = ",";
 	vector<pair<string, string>> productions;
@@ -42,12 +42,13 @@ void APDCG::initialize() {
 
 	productions = parseProductions(p);
 
-	for (int i = 0; i < pMatrixLines; i++) {
+	for (int i = 0; i < linii; i++) {
 		getline(file, tableLine);
 		tableLineV = parseTableLine(tableLine);
 		for (int j = 0; j < tableLineV.size(); j++) {
 			pMatrix[i][j] = tableLineV[j];
 		}
+		
 	}
 
 }
@@ -88,8 +89,8 @@ vector<string>APDCG::parseTableLine(string s) {
 
 void APDCG::postTable() {
 
-	for (int i = 0; i < pMatrixLines; i++) {
-		for (int j = 0; j < pMatrixColumns; j++) {
+	for (int i = 0; i < linii; i++) {
+		for (int j = 0; j < coloane; j++) {
 			cout << std::setw(5);
 			cout << this->pMatrix[i][j];
 		}
@@ -101,12 +102,12 @@ void APDCG::postTable() {
 string APDCG::getElement(string line, string column) {
 
 	int _line, _column = 0;
-	for (int i = 0; i < pMatrixLines; i++) {
+	for (int i = 0; i < _pMatrixLines; i++) {
 		if (pMatrix[i][0] == line) {
 			_line = i;
 		}
 	}
-	for (int j = 0; j < pMatrixColumns; j++) {
+	for (int j = 0; j < _pMatrixColumns; j++) {
 		if (pMatrix[0][j] == column) {
 			_column = j;
 		}
@@ -173,7 +174,7 @@ void APDCG::pushDownAutomateWithCodeGenerator() {
 	string initialStringCopy;
 	string element;
 	int ct = 1;
-	
+
 	initialStringCopy = this->initialString;
 	principalStack.push("$");
 	attributeStack.push("$");
@@ -185,7 +186,7 @@ void APDCG::pushDownAutomateWithCodeGenerator() {
 		int _length = -1;
 		int _index = -1;
 
-		string auxString;	
+		string auxString;
 
 		auxString = auxString + initialStringCopy[0];
 		element = getElement(principalStack.top(), auxString);
@@ -214,28 +215,29 @@ void APDCG::pushDownAutomateWithCodeGenerator() {
 				principalStack.pop();
 			}
 			principalStack.push(productions[_index].first);
-		}
 
-		string type;
-		type = getType(_index);
-		if (type == "simple") {
-			attributeStack.push("a");
-		}
-		else if (type == "complex") {
-			string o1, o2, temp, output;
-			char op;
-			o1 = attributeStack.top();
-			attributeStack.pop();
-			o2 = attributeStack.top();
-			attributeStack.pop();
+			string type;
+			type = getType(_index);
+			if (type == "simple") {
+				attributeStack.push(productions[_index].second);
+			}
+			else if (type == "complex") {
+				string o1, o2, temp, output;
+				char op;
+				o1 = attributeStack.top();
+				attributeStack.pop();
+				o2 = attributeStack.top();
+				attributeStack.pop();
 
-			temp = tempVar(ct);
-			attributeStack.push(temp);
+				temp = tempVar(ct);
+				attributeStack.push(temp);
 
-			op = getOperator(_index);
-			output = emmit(temp, o2, o1, op);
-			writeIntermediaryCodeToFile(output);
-			ct++;
+				op = getOperator(_index);
+				output = emmit(temp, o2, o1, op);
+				writeIntermediaryCodeToFile(output);
+				ct++;
+			}
+
 		}
 
 		if (element == "acc") {
@@ -261,7 +263,7 @@ string APDCG::getType(int index) {
 	if (index == -1) {
 		return "negligible";
 	}
-	if (((productions[index].second).length() > 1)&&(productions[index].second!="(E)")) {
+	if (((productions[index].second).length() > 1) && (productions[index].second[1] == '+' || productions[index].second[1] == '*')) {
 		return "complex";
 	}
 	if (((productions[index].second).length() == 1) && (productions[index].second == "a")) {
@@ -270,7 +272,7 @@ string APDCG::getType(int index) {
 	return "negligible";
 }
 
-string APDCG::emmit(string temp,string o1, string o2,char op) {
+string APDCG::emmit(string temp, string o1, string o2, char op) {
 
 	string s;
 	s = temp + '=' + o1 + op + o2;

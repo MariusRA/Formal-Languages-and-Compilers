@@ -2,6 +2,7 @@
 #include "grammar.h"
 #include "push_down_automate.h"
 #include "code_generator.h"
+#include "matrix_generator.h"
 
 
 int main() {
@@ -17,10 +18,19 @@ int main() {
 	apd.postTable();
 	apd.pushDownAutomate();*/
 
-	APDCG apdcg;
+	/*APDCG apdcg;
 	apdcg.initialize();
-	apdcg.pushDownAutomateWithCodeGenerator();
+	apdcg.postTable();
+	apdcg.pushDownAutomateWithCodeGenerator();*/
 	
+	PrecedenceMatrix p;
+	p.initialize();
+	p.verifyAllOk();
+
+	p.generateMatrix();
+	p.postMatrix();
+	
+
 	return 0;
 }
 

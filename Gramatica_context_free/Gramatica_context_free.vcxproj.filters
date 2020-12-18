@@ -32,6 +32,12 @@
     <Text Include="apdcg.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="matrix_output.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="matrix_generator.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="push_down_automate.h">
@@ -44,6 +50,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="includes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix_generator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

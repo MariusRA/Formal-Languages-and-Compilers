@@ -8,5 +8,6 @@
 #include <time.h>
 #include <iomanip>
 #include <stack>
+#include <algorithm>
 
 using namespace std;
